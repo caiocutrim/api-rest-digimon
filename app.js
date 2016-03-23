@@ -17,11 +17,27 @@ app.get('/digimons/:_id', function(req, res) {
 	var _id = parseInt(req.params._id, 10);
 	res.json([{
 		"name": "Rodrigo Oler"
-	}]);	
+	}]);
 });
 
 app.post('/digimons/', function(req, res) {
-	r
+	res.status(201).json({
+		"status": "Created"
+	});
+});
+
+app.put('/digimons/:_id', function(req, res) {
+	var _id = parseInt(req.params, 10);
+	res.json({
+		"status": "Updated"
+	});
+});
+
+app.delete('/digimons/:_id', function(req, res) {
+	var _id = parseInt(req.params, 10);
+	res.json({
+		"status": "Deleted"
+	});
 });
 
 app.listen(3000, function() {
