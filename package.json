@@ -13,6 +13,9 @@
   "author": "Rodrigo Oler",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongojs": "^2.3.0"
   }
 }

@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var DigimonsModel = require('../models/DigimonsModel');
+var DigimonsController = require('../controllers/DigimonsController')(DigimonsModel);
 
 router.get('/digimons', function(req, res) {
 	res.json([{
@@ -20,11 +22,7 @@ router.get('/digimons/:_id', function(req, res) {
 	}]);
 });
 
-router.post('/digimons/', function(req, res) {
-	res.status(201).json({
-		"status": "Created"
-	});
-});
+router.post('/digimons', DigimonsController.create);
 
 router.put('/digimons/:_id', function(req, res) {
 	var _id = parseInt(req.params, 10);
