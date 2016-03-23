@@ -1,8 +1,19 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.get('/digimons', function (req, res) {
+	res.json([
+  	{ "name": "Agumon (アグモン)" },
+  	{ "level": "Rookie" },
+  	{ "type": "Reptile" },
+  	{ "attribute": "Vaccine" },
+	]);
+});
+
+app.get('/digimons/:_id', function (req, res) {
+  res.json([
+  	{ "name": "Rodrigo Oler" }
+	]);
 });
 
 app.listen(3000, function () {
