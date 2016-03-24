@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var DigimonsController = new require('../controllers/DigimonsController');
+var express = require('express'),
+	router = express.Router(),
+	DigimonsController = new require('../controllers/DigimonsController');
 
 router.get('/digimons', 		DigimonsController.findAll.bind(DigimonsController));
 router.get('/digimons/:_id', 	DigimonsController.findOne.bind(DigimonsController));
