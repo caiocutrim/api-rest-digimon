@@ -1,12 +1,13 @@
+var DigimonsModel = require('../models/DigimonsModel');
+
 function DigimonsController(Model) {
 	this.Model = Model;
 }
 
 DigimonsController.prototype.create = function(req, res){
-	console.log(req.body);
-	console.log("49:05");
+	this.Model.create(req.body, function(err, res) {
+		console.log(err, res);
+	});
 };
 
-module.exports = function(Model) {
-	return new DigimonsController(Model);
-}
+module.exports = new DigimonsController(DigimonsModel);
